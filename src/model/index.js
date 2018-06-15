@@ -30,4 +30,3 @@ module.exports = class Bitmap { // eslint-disable-line
   // flipImage()
   // addBorder()
 };
-console.log('hello world');
