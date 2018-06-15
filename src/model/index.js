@@ -1,11 +1,11 @@
 'use strict';
 
-// size of file bitmap header = 14 bytes
-// size of DIB header = 12 bytes
+// // size of file bitmap header = 14 bytes
+// // size of DIB header = 12 bytes
 
-// http://en.wikipedia.org/wiki/BMP_file_format
+// // http://en.wikipedia.org/wiki/BMP_file_format
 
-const Bitmap = module.exports = class { // eslint-disable-line
+module.exports = class Bitmap { // eslint-disable-line
   constructor(buffer) {
     const fileSizeOffset = 2;
     const bitmapWidth = 18; 
@@ -30,3 +30,4 @@ const Bitmap = module.exports = class { // eslint-disable-line
   // flipImage()
   // addBorder()
 };
+console.log('hello world');
