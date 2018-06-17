@@ -29,7 +29,7 @@ module.exports = class Bitmap { // eslint-disable-line
     fs.writeFile(`${__dirname}/newbaldy.bmp`, this.buffer, 'utf8', (err, data) => {
       if (err) return null;
       console.log(data);
-      return 'calm yourself, airBNB linter and/or travis CI'
+      return 'calm yourself, airBNB linter and/or travis CI';
     });
   }
   // possible methods
