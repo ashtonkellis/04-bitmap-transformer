@@ -1,7 +1,7 @@
 'use strict';
 
 
-const fs = require('fs')
+const fs = require('fs');
 // // size of file bitmap header = 14 bytes
 // // size of DIB header = 12 bytes
 
@@ -25,12 +25,12 @@ module.exports = class Bitmap { // eslint-disable-line
     // and the colorTableLength so you can just access that portion of the buffer 
     // at that offset and manipulate that data.
   }
-  copy(){
+  copy() {
     fs.writeFile(`${__dirname}/newbaldy.bmp`, this.buffer, 'utf8', (err, data) => {
-      if(err) return null;
-      console.log(data)
+      if (err) return null;
+      console.log(data);
 
-    });
+  });
   }
   // possible methods
   // greyscale()
