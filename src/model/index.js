@@ -28,7 +28,7 @@ module.exports = class Bitmap { // eslint-disable-line
   copy() {
     fs.writeFile(`${__dirname}/newbaldy.bmp`, this.buffer, 'utf8', (err, data) => {
       if (err) return null;
-      console.log(data);
+      else console.log(data);
     });
   }
   // possible methods
