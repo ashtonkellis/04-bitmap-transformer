@@ -14,7 +14,8 @@ fs.readFile(testImgPath, (err, data) => {
     throw new Error('Read file is broken! oops!');
   }
   console.log('data', data); // eslint-disable-line
-
+  
   const newBitmap = new Bitmap(data);
-  console.log(newBitmap); // eslint-disable-line
+  newBitmap.copy();
+  console.log('newBitmap', newBitmap); // eslint-disable-line
 });

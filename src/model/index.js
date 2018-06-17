@@ -1,5 +1,7 @@
 'use strict';
 
+
+const fs = require('fs')
 // // size of file bitmap header = 14 bytes
 // // size of DIB header = 12 bytes
 
@@ -17,12 +19,19 @@ module.exports = class Bitmap { // eslint-disable-line
     this.fileSize = buffer.readUInt32LE(fileSizeOffset);
     this.height = buffer.readUInt32LE(bitmapHeight);
     this.width = buffer.readUInt32LE(bitmapWidth);
+    this.buffer = buffer;
     // this.colorTable = some method from the Buffer class that passes in the 
     // colorTableOffset variable 
     // and the colorTableLength so you can just access that portion of the buffer 
     // at that offset and manipulate that data.
   }
+  copy(){
+    fs.writeFile(`${__dirname}/newbaldy.bmp`, this.buffer, 'utf8', (err, data) => {
+      if(err) return null;
+      console.log(data)
 
+    });
+  }
   // possible methods
   // greyscale()
   // invertColors()
