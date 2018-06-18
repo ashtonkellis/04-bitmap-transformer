@@ -13,6 +13,7 @@ fs.readFile(testImgPath, (err, data) => {
   if (err) {
     throw new Error('Read file is broken! oops!');
   }
+  
   const newBitmap = new Bitmap(data);
   // height should be 55,138 bytes
   // width shoudl be 110
@@ -21,6 +22,7 @@ fs.readFile(testImgPath, (err, data) => {
   console.log('    width:', newBitmap.width); // eslint-disable-line
   console.log('   height:', newBitmap.height); // eslint-disable-line
   console.log('color table:', newBitmap.colorTable);
+  newBitmap.copy();
 });
 
 
