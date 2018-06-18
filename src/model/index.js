@@ -38,7 +38,7 @@ module.exports = class Bitmap { // eslint-disable-line
       this.postColorTable,
     ]);
     
-    fs.writeFile(`${__dirname}/house_copy.bmp`, newBuffer, 'utf8', (err) => {
+    fs.writeFile(`${__dirname}/../assets/house_copy.bmp`, newBuffer, 'utf8', (err) => {
       if (err) return null;
       return null;
     });
