@@ -7,7 +7,7 @@
 const fs = require('fs');
 const Bitmap = require('./model/index');
 
-const testImgPath = `${__dirname}/assets/baldy.bmp`;
+const testImgPath = `${__dirname}/assets/house.bmp`;
 
 fs.readFile(testImgPath, (err, data) => {
   if (err) {
@@ -19,19 +19,7 @@ fs.readFile(testImgPath, (err, data) => {
   // width shoudl be 110
   // height should be 125
   console.log('dib header size:', newBitmap.dibHeaderSize);
-  console.log('    width:', newBitmap.width); // eslint-disable-line
-  console.log('   height:', newBitmap.height); // eslint-disable-line
-  console.log('color table:', newBitmap.colorTable);
+  console.log('    width:', newBitmap.width); 
+  console.log('   height:', newBitmap.height);
   newBitmap.copy();
 });
-
-
-// console.log(buf);
-// console.log(buf.toString());
-
-// arg is the number of bits to skip before starting to read
-// console.log(buf.readUInt8(0));
-
-// reading the first 10 bits
-// console.log(buf.readUInt16BE(5));
-// console.log(buf.readUInt32LE(5));

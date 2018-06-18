@@ -24,13 +24,23 @@ module.exports = class Bitmap { // eslint-disable-line
     // colorTableOffset variable 
     // and the colorTableLength so you can just access that portion of the buffer 
     // at that offset and manipulate that data.
+    this.preColorTable = buffer.slice(0, colorTableOffset);
     this.colorTable = buffer.slice(colorTableOffset, colorTableOffset + colorTableLength);
+    this.postColorTable = buffer.slice(colorTableOffset + colorTableLength);
   }
 
   copy() {
-    fs.writeFile(`${__dirname}/newbaldy.bmp`, this.buffer, 'utf8', (err, data) => {
+    const newColorTable = this.colorTable;
+
+    const newBuffer = Buffer.concat([
+      this.preColorTable,
+      newColorTable,
+      this.postColorTable,
+    ]);
+    
+    fs.writeFile(`${__dirname}/house_copy.bmp`, newBuffer, 'utf8', (err) => {
       if (err) return null;
-      return 'calm yourself, airBNB linter and/or travis CI';
+      return null;
     });
   }
   // possible methods
