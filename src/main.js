@@ -21,6 +21,6 @@ fs.readFile(testImgPath, (err, data) => {
   console.log('dib header size:', newBitmap.dibHeaderSize);
   console.log('    width:', newBitmap.width); 
   console.log('   height:', newBitmap.height);
-  // newBitmap.copy();
+  newBitmap.copy();
   newBitmap.toBlack();
 });
